@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Strings</title>
+	<style type="text/css">
+		#txt2{
+			width: 500px;
+		}
+	</style>
+	<script type="text/javascript">
+		/*var a="he is a boy a a the a";
+		//var b=a.replace("a","the");
+		//alert(b);
+
+		var char=a.split('');
+		for(var i=0;i<char.length;i++)
+		{
+			//alert(char[i]);
+			if(char[i]==a)
+				var res=a.replace("a","the");
+		}
+
+		alert(res);*/
+
+        var sec=0,min=0,hour=0;
+        //var d = new Date();
+        //ar h =d.getHours();
+        //var m=d.getMinutes();
+        //var s=d.getSeconds();
+        //alert(h);
+
+        var g = setInterval(myTimer,1000);
+
+         function myTimer()
+         {
+         	//alert("hi");
+         	if(sec>=60)
+         	{
+         		min++;
+         		if(min>=60)
+         		{
+         			hour++;
+         			min=0;
+         		}
+         		sec=0;
+
+         	}
+         	else{
+         		document.getElementById("sec").innerHTML=sec;
+         		document.getElementById("min").innerHTML=min;
+         		document.getElementById("hour").innerHTML=hour;
+         		sec++;
+         	}
+         }
+
+
+		function clear()
+		{
+			document.getElementById("txt2").value=" ";
+			document.getElementById("outputargs").value=" ";
+		}
+
+		function stringreplace()
+		{
+			document.getElementById("txt2").value=" ";
+			var a=document.getElementById("sample").innerHTML;
+			alert(a);
+			var res=a.replace(/e/g,"replaced");
+			document.getElementById("txt2").value=res;
+		}
+
+		
+
+
+		function arraychk(par1)
+		 {
+		 	var r=typeof(par1);
+		 	document.getElementById("outputargs").value=r;
+		 	alert(par1);
+		 }
+
+
+
+		 function insertarray()
+		 {
+		 	//alert("hi");
+		 	var arr=["1","3","4","5","6"];
+		 	var x;
+		 	x=arr.length;
+		 	var position=1,replaceelement;
+		 	var insertelement="2";
+
+		 	for(var i=position;i<=x;i++)
+		 	{
+                 replaceelement=arr[i];
+                 arr[i]=insertelement;
+                 insertelement=replaceelement;
+		 	}
+		 	alert(arr);
+
+		 }
+		 /*function timer1()
+		 {
+		 	var i=1;
+		 	setInterval(timer(i),1000);
+		 }
+
+		 function timer(i)
+		 {
+		 	
+		 	//alert(i);
+		 	i++;
+		 	document.getElementById("txt3").value=i;
+		 }*/
+		//var s = "over population";
+/*for (var i = 0; i < s.length; i++) {
+    alert(s.charAt(i));
+    
+}*/
+   /* var c=s.charAt(5);
+    alert(c);
+    for (var i = 0; i < s.length; i++) {
+    //alert(s.charAt(i));
+    if(s.charAt(i)=o)
+    	var result=s.replace("o","g");
+    
+}
+
+    alert(result);*/
+	</script>
+</head>
+<body onload="clear()">
+
+  <p id="sample"> my name is gurpreet</p>
+  <input type="text" id="txt2">
+  <input type="button" id="btn" value="Replace" onclick="stringreplace()" >
+
+  <hr>
+
+  <h1>To find out if argument passed is array or not</h1>
+    
+    <input type="text" id="outputargs">
+
+   <input type="button" id="btn2" value="Check Argmt." onclick="arraychk([5,7,8])" >
+
+   <hr>
+
+   <h2>Insert Element at 2nd position in array</h2>
+   <input type="button" id="array" value="Insert" onclick="insertarray()">
+
+<hr>
+
+<h3>Timer</h3>
+<table>
+<tr>
+ <td><p id="hour"></p><td>:
+ <td><p id="min"></p><td>:
+ <td><p id="sec"></p>
+
+</body>
+</html>

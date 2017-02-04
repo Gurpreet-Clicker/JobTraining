@@ -1,0 +1,29 @@
+{
+  "name": "gurpreet",
+  "version": "1.0.0",
+  "description": "thisismynode",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "handlebars": "^4.0.6",
+    "hapi": "^16.1.0",
+    "http": "0.0.0",
+    "mysql": "^2.13.0",
+    "path": "^0.12.7",
+    "twit": "^2.2.5",
+    "vision": "^4.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm install http --save"
+  },
+  "repository": {
+    "type": "git",
+    "url": "/home/adminint1/node_modules"
+  },
+  "keywords": [
+    "[]"
+  ],
+  "author": "gurpreet",
+  "license": "ISC"
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+
+	<style type="text/css">
+		#calci{
+			margin-left: 385px;
+		}
+	</style>
+
+
+	<script>
+  
+   function addition()
+   {
+	var a=document.getElementById("inp1").value;
+	var b=document.getElementById("inp2").value;
+	var c=parseInt(a)+parseInt(b);
+	document.getElementById("result").value=c;
+   }
+
+   function subtract()
+   {
+	var a=document.getElementById("inp1").value;
+	var b=document.getElementById("inp2").value;
+	var c=parseInt(a)-parseInt(b);
+	document.getElementById("result").value=c;
+   }
+
+   function multiplication()
+   {
+	var a=document.getElementById("inp1").value;
+	var b=document.getElementById("inp2").value;
+	var c=parseInt(a)*parseInt(b);
+	document.getElementById("result").value=c;
+   }
+
+   function division()
+   {
+	var a=document.getElementById("inp1").value;
+	var b=document.getElementById("inp2").value;
+	var c=parseInt(a)/parseInt(b);
+	document.getElementById("result").value=c;
+   }
+
+
+   function square()
+   {
+	var a=document.getElementById("inp1").value;
+	
+	var c=parseInt(a)*parseInt(a);
+	document.getElementById("result").value=c;
+   }
+
+   function squareroot()
+   {
+   	var a=document.getElementById("inp1").value;
+   	var c=Math.sqrt(a);
+   	document.getElementById("result").value=c;
+   }
+
+   function allclear()
+   {
+   	document.getElementById("inp1").value=" ";
+   	document.getElementById("inp2").value=" ";
+   	document.getElementById("result").value=" ";
+   }
+	</script>
+</head>
+<body onload="allclear();">
+
+<h2><center>Calculator</center></h2>
+
+<div id="calci">
+<table>
+
+<tr><td>
+ <label>Enter First Number</label><td><input type="text" name="inp1" id="inp1">
+ <tr><td><label>Enter Second Number</label> <td><input type="text" name="inp2" id="inp2">
+ <tr><td><label>Result</label><td><input type="text" name="result" id="result">
+ </table>
+
+  <table>
+   <tr><td><input type="button" name="add" value="add" onclick="addition()">
+   <td><input type="button" name="subtract" value="subtract" onclick="subtract()">
+   <td><input type="button" name="multiply" value="multiply" onclick="multiplication()">
+   <tr><td><input type="button" name="division" value="division" onclick="division()">
+   <td><input type="button" name="square" value="square" onclick="square()">
+   <td><input type="button" name="sqrt" value="square root" onclick="squareroot()">
+   </table>
+   </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Sign Up
+	</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <script
+  
+			  src="https://code.jquery.com/jquery-3.1.1.js"
+			  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+			  crossorigin="anonymous"></script>
+
+
+			  <script type="text/javascript">
+			  	function signup()
+			  	{
+
+                       var jasus=false;
+			  		var name=document.getElementById("name").value;
+			  		var email=document.getElementById("email").value;
+			  		var dob=document.getElementById("dob").value;
+			  		var password=document.getElementById("password").value;
+			  		var chkpassword=document.getElementById("chkpassword").value;
+			  		var mobile=document.getElementById("mobile").value;
+
+
+			  		if(name=="" || email=="" || dob=="" || password=="" || chkpassword=="" || mobile=="")
+                  	alert("Fill Correct Information");
+			  		if(isNaN(mobile) )
+			  		{
+
+			  			alert("mobile number should be numeric");
+                             jasus=true;
+                             //alert(jasus);
+			  		window.location.href = "loginform.html"
+			  		
+			  	}
+			  		if(mobile.length != 10)
+			  		{
+			  			alert("mobile no should be of 10 digits");
+			  			
+			  			//window.location.href = "signupform.html"
+			  		}
+
+
+                  
+                  if(password==chkpassword && password != "" && chkpassword !="" && mobile.length==10 )
+                  {
+			  		//alert("hi");
+			  		var data=($("form").serializeArray());
+			  		//alert(data);
+			  		
+			  		
+			  		var myjson={};
+
+			  		$.each(data,function()
+			  		{
+			  			myjson[this.name]=this.value;
+			  			//alert(myjson);
+			  		});
+
+			  		myjson=JSON.stringify(myjson);
+			  		localStorage.setItem('myObj', myjson);
+			  		//alert(myjson);
+
+                    window.location.href = "loginform.html"
+                
+            }
+            else
+            	alert("Password do not match or Fill Correct Info");
+
+
+			  	}
+
+
+			  	function clearall()
+			  	{
+			  		document.getElementById("frm").reset();
+			  	}
+			  </script>
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<body bgcolor="red"  onload="clearall()">
+<div class="container">
+<h1 align="center">Sign Up  Form</h1>
+
+
+<form  name="frm">
+
+<table align="center" cellspacing="10" border="0" width="100" height="100" class="table table-hover">
+	
+	<tr class="success"><td>Name<td><input class="text-success"  type="text" name="name" id="name">
+	<tr><td>Email<td><input class="text-success" type="txt" name="email" id="email">
+	
+	<tr class="success"><td>Date of Birth<td><input class="text-success" type="Date" name="dob" id="dob" >
+
+	<tr><td>Password<td><input class="text-success" type="Password" name="password" id="password">
+	<tr class="success"><td>Re-Enter Password<td><input class="text-success" type="password" name="password" id="chkpassword">
+
+	<tr><td>Mobile<td><input type="text"  class="text-success"  name="mobile" id="mobile">
+	<tr class="success"><td><td><input class="btn-success" type="button" name="SignUp" value="SignUp" onclick="signup()">
+     
+
+	
+</table>
+
+</form>
+
+
+</div>
+
+
+</body>
+</html>

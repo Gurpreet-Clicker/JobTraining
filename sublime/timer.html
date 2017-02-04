@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	
+
+	<script>
+var myVar = setInterval(function(){ myTimer() }, 1000);
+
+function myTimer()
+ {
+
+    var d = new Date();
+    var t = d.toLocaleTimeString();
+    document.getElementById("time").value = t;
+}
+</script>
+</head>
+<body>
+
+
+Current Time is:<input type="text" name="time" id="time">
+
+
+
+</body>
+</html>

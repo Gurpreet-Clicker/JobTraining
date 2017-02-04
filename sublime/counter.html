@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<script type="text/javascript">
+
+function demo()
+{
+	alert("hi");
+}
+ 
+	
+
+
+     
+
+	function showName(ct) {
+		
+		alert("hi");
+	​//var nameIntro = "Your name is ";
+	  var myct=ct;
+	    // this inner function has access to the outer function's variables, including the parameter​
+	​function abc()
+	{
+		//var counter=0;
+
+		
+		myct= myct+1;
+		alert(myct);
+              //x=1;
+              //alert(x);
+	}
+       abc();
+	}
+	​
+	​
+
+
+	
+</script>
+
+</head>
+<body>
+<input type="button" value="click me" onclick="demo()">
+</body>
+</html>

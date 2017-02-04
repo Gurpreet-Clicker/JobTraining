@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#tb1{
+			height: 293px;
+			width:400px;
+			background-color: #DBDCFF;
+			margin-left: 400px;
+			margin-top: 200px;
+
+		}
+	</style>
+	
+</head>
+<body>
+<div  align="center" id="tb1">
+    <table align="center" border="3" width="400">
+    <tr><td>First Name<td>
+     <p id="demo"></p>
+     <tr><td>Last Name<td>
+     <p id="w">sdsd</p>
+     <tr><td>Mobile<td>
+     <p id="a">sdsd</p>
+     <tr><td>Re-enter Mobile<td>
+     <p id="b">sdsd</p>
+     <tr><td>Password
+     <td>
+
+     <p id="c">sdsd</p>
+</table>
+</div>
+     <script>
+	var obj=new Object();
+	obj=localStorage.getItem('myObj');
+	obj=JSON.parse(obj);
+		document.getElementById("demo").innerHTML=obj.fname;
+		document.getElementById("w").innerHTML=obj.surname;
+		document.getElementById("a").innerHTML=obj.mobile;
+		document.getElementById("b").innerHTML=obj.chkmobile;
+		document.getElementById("c").innerHTML=obj.pwd;
+		
+	</script>
+ 
+ 
+ 
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+</head>
+<body>
+    
+<div align="center" style="margin-top: 300px;">
+    <p id="a"></p>
+    <p id="b"></p>
+    </div>
+
+     <script>
+	var obj=new Object();
+	obj=localStorage.getItem('myObj');
+	obj=JSON.parse(obj);
+		
+		var email=obj.email;
+		var password=obj.password;
+		if(password==12345)
+        {
+            alert("Welcome to Facebook");
+            document.getElementById("a").innerHTML="Welcome to Facebook";
+        }
+
+        else
+        {
+            alert("Failed to Login");
+            document.getElementById("b").innerHTML="Password is Incorrect";
+
+        }
+		
+	</script>
+ 
+ 
+ 
+
+</body>
+</html>

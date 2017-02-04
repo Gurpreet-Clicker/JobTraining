@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript">
+
+
+	function process()
+		{
+
+		 //var x=$('form').serializeArray();
+
+			var myobj={"name":"john","age":30};
+			
+			localStorage.setItem('myobj',JSON.stringify(myobj));
+			//alert(x);
+
+			//alert(name.txt1);
+
+
+			//alert(x);
+		//localStorage.setItem("name","HSJD");
+		//var rs=localStorage.getItem("name");
+		//alert("rs")
+		//localStorage.setItem("rollno",b); 
+		}
+	
+
+	</script>
+</head>
+<body>
+
+
+<form  name="form" action="second.html" >
+<input type="text" name="txt1" id="txt1">
+<input type="text" name="txt2" id="txt2">
+ 
+  <input type="submit" name="submit">
+  </form>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		function Login()
+		{
+			//alert("hi");
+
+			var mail=document.getElementById("email").value;
+			var password=document.getElementById("password").value;
+
+          if(mail="" || password=="")
+          	alert("Some Fields are Empty");
+          else
+           {
+			var obj;
+	       obj=localStorage.getItem('myObj');
+	       obj=JSON.parse(obj);
+            var pwd=document.getElementById("password").value;
+           // alert(pwd);
+            //alert(obj.password+"hi");
+
+			if(mail==obj.email || pwd==obj.password)
+			{
+				//alert("entered into if");
+             window.location.href = "welcomepage.html";
+			}
+		else
+			alert("Email or Password Is Incorrect");
+	}
+             
+		}
+	</script>
+</head>
+<body class="bg-success">
+
+
+
+
+<h2 align="center">Login Form</h2>
+
+
+<div class="container">
+<div class="form-group">
+<form class="form-horizontal" method="post" action="welcomepage.html">
+
+
+
+
+<table align="center" border="0" width="400" height="200" style="margin-left: 400px;">
+	
+
+	<tr><td>Email<td><input type="txt" name="email" id="email">
+	
+	<tr><td>Password<td><input type="Password" name="password" id="password">
+	
+	
+	<tr><td><td><input type="button" name="login" value="login" class="btn-primary" onclick="Login()">
+
+
+	
+</table>
+</form>
+</div>
+</div>
+
+</body>
+</html>

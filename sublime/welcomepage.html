@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#tb1{
+			height: 230px;
+			
+			background-color: #DBDCFF;
+			margin-left: 400px;
+			display: inline-block;
+		     width: 395px;
+			
+
+
+		}
+	</style>
+	
+</head>
+<body>
+
+<table align="center"><tr><td><h1 id="me">Welcome</h1><td><h1><p id="json"></p></h1></h1></table>
+<div   id="tb1">
+    <table align="center" border="3" width="400">
+    <tr><td>First Name<td>
+     <p id="demo"></p>
+     <tr><td>Email<td>
+     <p id="w">sdsd</p>
+     <tr><td>Mobile<td>
+     <p id="a">sdsd</p>
+     <tr><td>Date of Birth
+     <td><p id="b"></p>
+     
+
+     
+</table>
+</div>
+     <script>
+	var obj;
+	       obj=localStorage.getItem('myObj');
+	       obj=JSON.parse(obj);
+
+	        var a=obj.email;
+	       // alert(a);
+		document.getElementById("demo").innerHTML=obj.name;
+		document.getElementById("w").innerHTML=obj.email;
+		document.getElementById("a").innerHTML=obj.mobile;
+		document.getElementById("b").innerHTML=obj.dob;
+		document.getElementById("json").innerHTML=obj.name;
+		
+		
+	</script>
+ 
+ 
+ 
+
+</body>
+</html>

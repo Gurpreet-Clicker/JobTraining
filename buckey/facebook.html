@@ -1,0 +1,185 @@
+<html>
+<head>
+<title>
+Facebook-Login or Sign Up
+</title>
+
+<link rel="stylesheet" type="text/css" href="facebook.css">
+<script type="text/javascript">
+
+function process()
+{
+
+
+var mob=document.getElementById("mobile").value;
+var mob1=document.getElementById("chkmobile").value;
+if(mob==mob1)
+
+{
+  //var d=document.getElementById.value("day").value;
+  //alert(d);
+  var myObj = { "fname":document.getElementById("fname").value,
+         "surname":document.getElementById("surname").value
+   , "mobile":document.getElementById("mobile").value
+   ,"chkmobile":document.getElementById("chkmobile").value
+   , "pwd":document.getElementById("pwd").value
+
+
+
+
+
+
+
+
+};
+
+localStorage.setItem('myObj', JSON.stringify(myObj));
+
+//windows.location.href="display.html";
+}
+else
+  alert("Mobile Do not match");
+}
+
+
+function login()
+{
+  var myObj = { "email":document.getElementById("email").value,
+         "password":document.getElementById("password").value
+       };
+       localStorage.setItem('myObj', JSON.stringify(myObj));
+
+
+
+
+}
+
+
+
+</script>
+  
+
+
+</head>
+<body>
+    <div id="main">
+       <div id="title">
+          <div id="fb">
+           <h1  style="font-family: Helvetica, Arial, sans-serif;  color:white; margin-left:60px;"> facebook</h1>
+          </div>
+
+          <div id="personal">
+          <form  action="loginprocess.html">
+              <table id="t1"> 
+                <tr style="font-family: Helvetica, Arial, sans-serif;"><td ><label><font color="white" size="2">Email or Phone</font></label><td><font color="white" size="2">Password</font>
+                <tr><td><input type="text" id="email" required><td><input   type="password" required id="password"><td><input type="submit" value="login" onclick="login()">
+                <tr><td><td style="font-family: Helvetica, Arial, sans-serif;"><font color="white" size="2">Forgotten Account?</font>  
+               </table>        
+               </form>
+            
+          </div>
+          
+       </div>
+       
+       
+          <div id="image">
+              <div class="text">
+                Facebook helps you connect and share with the people in your life.
+              </div>
+          <img src="panga.png"  height="250" width="650"> 
+            
+              
+              
+          </div>  
+
+         
+          <div id="signup">
+             
+             <h1 style="font-family: Helvetica, Arial, sans-serif; ">Create an Account</h1><br>
+                <div class="itsfree">
+                It's free and always will be.
+                </div>
+             <form  action="display.html" enctype="multipart/form-data">
+              <table id="t2">
+              <tr><td><input type="text" id="fname" required placeholder="First Name"><td><input type="text" required id="surname"                    placeholder="Surname">
+              </table>
+              
+              <table id="t3"> 
+              <tr><td><input type="text" required id="mobile" placeholder="Mobile Number or Email Address">
+              <tr><td><input type="text" id="chkmobile" required placeholder="Re-enter Mobile Number or Email Address">
+              <tr><td  style="Padding-Bottom:10px;"><input type="text" required id="pwd" placeholder="New Password">
+               <br>
+
+              <tr><td>Birthday
+              </table>
+
+              <table id="t4">
+               <tr><td style="Padding-Bottom:20px;"> <select required id="day" style="width:60px; height:30px;">
+                <option value="Day">Day</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="06">06</option>
+                       </select>  
+                              
+
+                  <td style="Padding-Bottom:20px;"><select style="width:80px; height:30px;">
+                   <option value="Month">Month</option>
+                <option value="Jan">Jan</option>
+                <option value="Feb">Feb</option>
+                <option value="Mar">Mar</option>
+                <option value="Apr">Apr</option>
+                <option value="Mar">Mar</option>
+                <option value="Apr">Apr</option>
+                <option value="May">May</option>
+                       </select>  
+
+
+                  <td style="Padding-Bottom:20px;"><select id style="width:80px; height:30px;">
+                   <option value="Year">Year</option>
+                <option value="2000">2000</option>
+                <option value="2001">2001</option>
+                <option value="2002">2002</option>
+                <option value="2003">2003</option>
+                <option value="2004">2004</option>
+                <option value="2005">2005</option>
+                <option value="2006">2006</option>
+                       </select>  
+              
+
+                <tr><td><input type="radio" name="gender" value="Female">Male
+               <td><input type="radio" name="gender" value="Male"> Female
+              </table>
+          <table id="t5">
+                      
+                      <tr><td style="Padding-Bottom:20px;"><p class="privacy">By clicking Create an account, you agree to our Terms and confirm that you have read our Data Policy, including our Cookie Use Policy. You may receive SMS message notifications from Facebook and can opt out at any time.</p>
+               </table> 
+              
+          <table id="t6">
+          <input type="submit" class="button" value="Create an Account" onclick="process()">
+           </table>
+
+           </form>
+          <table>
+         <tr><td><p class="cratepage"><a href="https://www.facebook.com/pages/create/?ref_type=registration_form"><div class="text1">Create a Page</a> for a celebrity, band or business. </p>
+         </table>
+          
+
+
+             
+
+              
+                
+    
+             
+          </div>         
+  
+
+    </div>
+
+
+</body>
+</html

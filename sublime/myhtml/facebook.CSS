@@ -1,0 +1,168 @@
+#main{
+           background-color:white;
+            width:1200px;
+            height:900px;
+           position:absolute;
+        }
+
+ #title{
+            
+           background-color:blue;
+            width:1200px;
+            height:100px;
+position:absolute;
+
+        }
+
+ #fb{
+         background-color:#25488e;
+         width:600px;
+         height:100px;
+         float:left;
+position:absolute;
+     }
+
+#personal{
+         background-color:#25488e;
+         width:600px;
+         height:100px;
+         margin-left:600px;
+position:absolute;
+          
+          }
+
+
+  #email{
+               width:200px;
+         }
+ #password{
+              width:200px;
+          }
+
+
+  #t1{
+       margin-top:10px;
+      }
+
+   #image{
+           width:600px;
+           height:800px;
+           background-color:#DBDCFF;
+           margin-top:100px;
+           float:left; 
+                     
+}
+
+   #signup{
+           width:600px;
+           height:800px;
+           background-color:#DBDCFF;
+           margin-top:100px;
+           margin-left:600px;  
+           position:absolute;
+                    
+}
+
+
+   .text {
+    color: #0e385f;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 29px;
+    margin-top: 40px;
+    width: 450px;
+    
+    margin-left:60px;
+}
+
+.text1 {
+    color: #0e385f;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 29px;
+    margin-top: 40px;
+    width: 450px;
+    
+    
+}
+
+  .itsfree{color: #1d2129;
+font-size: 19px;
+   margin-top:0px; 
+      }
+
+
+#t2{
+     margin-top:20px;
+   }
+
+
+#t3{
+     margin-top:20px;
+   }
+
+#t5{
+margin-top:20px;
+}
+
+#t6{
+margin-top:30px;
+}
+  #fname{width:194px;
+         height:45px;
+        } 
+#surname{width:194px;
+         height:45px;
+        } 
+
+#mobile{width:393px;
+         height:45px;
+        } 
+
+#chkmobile{width:393px;
+         height:45px;
+        } 
+
+#pwd{width:393px;
+         height:45px;
+        } 
+
+#row{margin-top:56px;}
+
+
+#img{
+
+     background-image:url("myfb.png");
+      width:300px;
+     }
+ .privacy {
+    color: #777;
+    font-size: 11px;
+    width: 316px;
+ }
+
+
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+     border-radius: 6px;
+}
+
+.createpage {
+    border-top: 1px solid #dddfe2;
+    color: #666;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 10px;
+    padding-top: 15px;
+}
+   
