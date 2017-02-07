@@ -1,0 +1,133 @@
+<!-- <html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body ng-app="myApp">
+
+<table ng-controller="myCtrl" border="1">
+<tr ng-repeat="x in records">
+  <td>{{x.rollno}}</td>
+  <td>{{x.name}}</td>  
+</tr>
+</table>
+
+<script>
+var app = angular.module("myApp", []);
+app.controller("myCtrl", function($scope) {
+  $scope.records =users;
+});
+</script>
+<input type="button" name="" value="{{users}}" onclick="fetchdata(this.value)">
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Show Data
+	</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+
+	<script type="text/javascript">
+
+  
+		
+  
+
+	</script>
+  
+  
+</head>
+<body  >
+
+<div id="showData"></div>
+<h2 align="center">Students Info</h2>
+
+<span ng-repeat="doc in users">
+<h1> Hello,{{users.ename}}</h1>
+
+</span>
+<table>
+<!-- {{users.forEach(function(user)
+
+   { }}
+
+   <tr><td>{{ user.ename }} {{ }); }}
+   </table> -->
+<table align="center" border="6" cellspacing="7" cellpadding="7" width="500" height="300">
+
+
+
+<%=users %>
+<tr><th>RollNo<th>Name
+<% users.forEach(function(user) { %>
+    <tr><th> <%= user.ename %> <th> <%= user.eid %>
+<% }); %>
+</table>
+
+<!-- <input type="button" name="" value="{{users}}" onclick="fetchdata(this.value)"> -->
+
+
+
+</body>
+</html>

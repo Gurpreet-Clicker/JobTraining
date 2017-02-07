@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Info</title>
+	<script type="text/javascript">
+		function logout()
+		{
+			alert("You Have Successfully Logged Out");
+		}
+	</script>
+</head>
+<body>
+
+<h1 align="center">User Record</h1>
+
+ <form action="/users.js" method="POST">
+     
+	
+		<table align="center" cellspacing="6" cellpadding="6">
+		    <tr><td>Employee Id<td><input type="text" name="empid" id="empid">
+			<tr><td>Username<td><input type="text" name="username" id="username">
+				<tr><td>Password<td><input type="password" name="password" id="password">
+				<tr><td>Name<td><input type="text" name="name" id="name">
+				<tr><td>Age<td><input type="text" name="age" id="age">
+				<tr><td>Email<td><input type="text" name="email" id="email">
+				<tr><td>Phone No.<td><input type="text" name="phone" id="phone">
+				
+				 <tr><td>Role Type:<td> <select required id="day" name="role" style="width:90px; height:25px;">
+                <option value="Intern">Intern</option>
+                <option value="Hr">Hr</option>
+                <option value="Trainer">Trainer</option>
+                <option value="Co-Ordinator">Co-Ordinator</option>
+
+                
+                       </select>  
+
+
+               <tr><td><td><input type="Submit" name="submit" value="Register User">
+
+
+               <tr><td><td><a href="/logout"><input type="button" name="Logout Admin" onclick="logout()" value="Logout Admin"></a>
+
+
+               <tr><td><td><a href="/FetchMaxEmpId">FetchMaxEmpId</a>
+
+             
+
+				 	
+	
+    
+
+</table>
+</form>
+
+</body>
+</html>

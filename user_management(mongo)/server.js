@@ -33,6 +33,18 @@ var schema=new mongo.Schema({
 });
 
 
+var scheduleSchema=new mongo.Schema({
+           day   :    { type: String, required: true, index: { unique: true } },
+           topic:    {type:String,required:true},
+           tname:    {type:String,required:true},
+           tid    :    {type:Number,required:true },
+           qname     :    {type:String,required:true},
+           qid   :    {type:Number,required:true  },
+           ename   :    {type:String,required:true},
+           eid:    {type:Number,required:true}
+}); 
+
+
 var usersSchema=new mongo.Schema({
            empid   :    { type: Number, required: true, index: { unique: true } },
            username:    {type:String,required:true ,index: { unique: true }},
@@ -48,6 +60,10 @@ var admin=mongo.model('admin',schema);
 
 var users=mongo.model('users',usersSchema);
 
+//var Schedule=mongo.model('schedule',scheduleSchema);
+
+var Schedule1=mongo.model('schedule1',scheduleSchema);
+
 
 
 
@@ -58,6 +74,75 @@ server.connection({
   host: 'localhost',
   port: 3000
 });
+
+
+
+
+    server.route(
+{
+   method: 'POST',
+   path:'/submitSchedule',
+
+    config:{
+
+   //       auth: {
+   //      mode: 'try',
+   //      strategy: 'session'
+   //    },
+   //    plugins: {
+   //      'hapi-auth-cookie': {
+   //        redirectTo: false
+   //      }
+   //    },
+  
+   
+  handler: function(request,reply){
+
+
+        
+        //console.log(request.auth.isAuthenticated);
+
+
+         
+          var schedule = new Schedule1();
+
+                schedule.day = request.payload.day;
+                schedule.topic=request.payload.topic;
+               // user.password=request.payload.password;
+                schedule.tname=request.payload.tname;
+                schedule.tid=request.payload.tid;
+                schedule.qname=request.payload.qname;
+                schedule.qid=request.payload.qid;
+                schedule.ename=request.payload.ename;
+                schedule.eid=request.payload.eid;
+
+
+
+
+                
+                    schedule.save(function(err, user){
+                        if(err) {
+                            return reply(Boom.badRequest(err));
+                        }
+                        else
+                           return reply("Data Saved Successfully !!!");
+                    });
+                
+        
+        
+
+         
+    }
+     } 
+ 
+   });
+
+
+
+
+
+     
+
 
 
 
@@ -189,6 +274,48 @@ server.route(
    });
 
 
+server.route(
+{
+   method: 'GET',
+   path:'/css/style(schedule).css',
+
+   
+  handler: function(request,reply){
+    
+    
+    reply.file('/home/adminint1/user_management(mongo)/templates/css/style(schedule).css');
+   }
+   });
+
+
+server.route(
+{
+   method: 'GET',
+   path:'/images/bgnoise_lg.png',
+
+   
+  handler: function(request,reply){
+    
+    
+    reply.file('/home/adminint1/user_management(mongo)/templates/images/bgnoise_lg.png');
+   }
+   });
+
+
+server.route(
+{
+   method: 'GET',
+   path:'/images/select-arrow.png',
+
+   
+  handler: function(request,reply){
+    
+    
+    reply.file('/home/adminint1/user_management(mongo)/templates/images/select-arrow.png');
+   }
+   });
+
+
 
 
 server.route(
@@ -204,21 +331,29 @@ server.route(
    }
    });
 
+
+
+
+
+
+
 server.route(
 {
    method: 'GET',
-   path:'/FetchMaxEmpId',
+   path:'/viewSchedule',
+   
 
    
   handler: function(request,reply){
+
   	//var user=new users();
 //   	users.findOne({}).sort({empid:-1}).run( function(err, doc) {
 //      var max = doc.empid;
 //      reply(max);
 // });
-  	users.find({}, function(err, doc) {
+  	Schedule1.find({}, function(err, doc) {
       //var max = doc.empid;
-     reply(doc);
+     reply.view('show',{users:doc});
  });
    	
    	
@@ -257,6 +392,7 @@ server.route(
   	//var payload=request.payload;
    	var username=request.payload.username;
    	var password=request.payload.password;
+
    	//console.log(username);
 
     admin.findOne({username:username},function(err,result)
@@ -271,6 +407,7 @@ server.route(
        	if(password==result.password)
        	{
        		request.cookieAuth.set(result);
+       		console.log(request.auth.credentials);
        		return reply.view('users');
        	}
        	else
@@ -323,7 +460,7 @@ server.route(
                        	      else if(result.roleType=="Trainer")
                        	      	reply("Welcome Trainer");
                        	         else if(result.roleType=="Co-Ordinator")
-                       	         	reply("Welcome Co-Ordinator");
+                       	         	reply.view('schedule');
                         else 
                            reply("UnAuthorized Entry !!!");  
 
@@ -417,12 +554,15 @@ server.route(
 server.views(
    {
        engines:{
-       	html: require('handlebars')
-        //ejs: require('ejs')
+       	//html: require('handlebars'),
+        ejs: require('ejs')
        },
 
        relativeTo:__dirname,
        path: 'templates'
+
+       // layout:true,
+       // layoutPath:Path.join(__dirname,'templates');
        
 
    });
@@ -440,45 +580,3 @@ server.start(function (err) {
 
 
 
-//authentication using bcrypt
-// console.log(fields);
-     //        for( res in rows)
-     //          {
-
-     //           if(rows[res].username==username && rows[res].role=="Manager")
-     //           {
-     //              //console.log(rows[res].role);
-
-     //             //console.log(rows[res].username + rows[res].password);
-     //           var dbpass=rows[res].password;
-     //           //console.log(typeof(dbpass));
-     //           var myjson = JSON.stringify(dbpass);
-     //           //console.log(typeof(myjson));
-     //           //var stringpass=dbpass.toString();
-     //           //console.log(stringpass);
-     //           console.log("above compare");
-     //           bcrypt.compare(password, myjson, function(err, res) {
-     // // res == true 
-     //             //console.log(res);
-     //             if(err)
-     //               console.log(err);
-     //             else
-                 
-                   
-     //               return reply.view('manager');
-                  
-     //             // reply("password matched");
-                    
-     //            });
-     //            console.log("outside bcrypt.compare");
-     //            var user=rows[res].username;
-     //                var name=rows[res].name;
-
-     //                var age=rows[res].age;
-     //                var email=rows[res].email;
-     //                var phone=rows[res].phone;
-     //              //return reply.view('manager');
-
-     //             //reply.view('info',{user:user ,age:age ,name:name ,email:email ,phone:phone});
-
-     //          }

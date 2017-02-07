@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Demo Beautiful Registration Form with HTML5 and CSS3</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=EmulateIE9">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" href="css/style(schedule).css" media="all" />
+    <!-- <link rel="stylesheet" type="text/css" href="demo.css" media="all" /> -->
+</head>
+<body>
+<div class="container">
+			<!-- freshdesignweb top bar -->
+            <div class="freshdesignweb-top">
+                <a href="http://www.freshdesignweb.com" target="_blank">Home</a>
+                <span class="right">
+                    <a href="http://www.freshdesignweb.com/beautiful-registration-form-with-html5-and-css3.html">
+                        <strong>Back to the freshdesignweb Article</strong>
+                    </a>
+                </span>
+                <div class="clr"></div>
+            </div><!--/ freshdesignweb top bar -->
+			<header>
+				<h1><span>Weekly </span> Schedule</h1>
+            </header>       
+      <div  class="form">
+    		<form id="contactform" action="/submitSchedule" method="POST"> 
+
+      <table width="200">
+      <tr><td style="padding-bottom: 23px;">
+       
+                 <label>Day</label>
+                  <td style="padding-bottom: 23px;"><label class="month"> 
+                  <select class="select-style" name="day">
+                  <option value="Day">Day</option>
+                  <option  value="Monday">Monday</option>
+                  <option value="Tuesday">Tuesday</option>
+                  <option value="Wednesday" >Wednesday</option>
+                  <option value="Thursday">Thursday</option>
+                  <option value="Friday">Friday</option>
+                  <option value="Saturday">Saturday</option>
+                  
+                  </label>
+                 </select>  
+                 
+                 </table>
+    			<p class="contact"><label for="name">Topic</label></p> 
+    			<input id="name" name="topic" placeholder="Topic" required="" tabindex="" type="text"> 
+    			 
+    			<p class="contact"><label for="Trainer">Trainer </label></p> 
+    			<input id="tname" name="tname" placeholder="Trainer" required="" type="text"> 
+
+
+          <p class="contact"><label for="Trainer Id">Trainer Id</label></p> 
+          <input id="tid" name="tid" placeholder="Trainer Id" required="" tabindex="" type="text">
+                
+                <p class="contact"><label for="Query Trainer">Query Trainer</label></p> 
+    			<input id="qname" name="qname" placeholder="Query Trainer" required="" tabindex="" type="text"> 
+
+
+          <p class="contact"><label for="Query Trainer Id">Query Trainer Id</label></p> 
+          <input id="qid" name="qid" placeholder="Query Trainer Id" required="" tabindex="" type="text"> 
+
+          <p class="contact"><label for="Evaluation Trainer">Evaluation Trainer</label></p> 
+          <input id="ename" name="ename" placeholder="Evaluation Trainer" required="" tabindex="" type="text">
+
+          <p class="contact"><label for="Evaluation Trainer Id">Evaluation Trainer Id</label></p> 
+          <input id="eid" name="eid" placeholder="Evaluation Trainer Id" required="" tabindex="" type="text">
+
+
+    			 
+                
+        
+                 
+                
+  <!-- 
+            <select class="select-style gender" name="gender">
+            <option value="select">i am..</option>
+            <option value="m">Male</option>
+            <option value="f">Female</option>
+            <option value="others">Other</option>
+            </select><br><br>
+            
+            <p class="contact"><label for="phone">Mobile phone</label></p> 
+            <input id="phone" name="phone" placeholder="phone number" required="" type="text"> <br> -->
+            <input class="buttom" name="submit" id="submit" tabindex="" value="Submit Schedule" type="submit"> 
+
+            <a href="/viewSchedule"><input class="buttom" name="" id="" tabindex="" value="View Schedule" type="button">	 </a>
+   </form> 
+</div>      
+</div>
+
+</body>
+</html>

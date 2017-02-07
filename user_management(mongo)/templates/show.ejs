@@ -1,0 +1,58 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Show Data
+	</title>
+	<style type="text/css">
+		.emp{
+			background-color: "red";
+		}
+	</style>
+	
+
+
+	<script type="text/javascript">
+
+  
+		
+  
+
+	</script>
+  
+  
+</head>
+<body >
+
+<div id="showData"></div>
+<h2 align="center">Schedule</h2>
+
+
+<div>
+<table class="emp" bgcolor="green" >
+<!-- {{users.forEach(function(user)
+
+   { }}
+
+   <tr><td>{{ user.ename }} {{ }); }}
+   </table> -->
+<table bgcolor="green" align="center" border="6" cellspacing="7" cellpadding="7" width="300" height="100">
+
+
+
+
+<tr><th>Eid<th>EvaluationTrainer<th>Qid<th>QueryTrainer<th>Tid<th>TrainerName<th>Topic<th>Day
+<% users.forEach(function(user) { %>
+    <tr><th><%= user.eid %>   <th> <%= user.ename %> <th> <%= user.qid %> <th> <%= user.qname %> <th> <%= user.tid %> <th> <%= user.tname %> <th> <%= user.topic %> <th> <%= user.day %>
+<% }); %>
+</table>
+</div>
+
+<!-- <input type="button" name="" value="{{users}}" onclick="fetchdata(this.value)"> -->
+
+
+
+</body>
+</html>
